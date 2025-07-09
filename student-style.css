@@ -45,8 +45,8 @@ body {
 
 .social-icons {
   position: absolute;
-  left: 90px;
-  top: 120px;
+  right: -20px;
+  top: 172px;
   display: flex;
   gap: 15px;
 }
