@@ -462,30 +462,154 @@ input {
 /* Enhanced Mobile Responsiveness - Max Width 420px */
 @media (max-width: 420px) {
   body {
-    margin: 10px;
+    margin: 5px;
+    font-size: 14px;
   }
 
+  .container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px; /* Ensure enough height */
+  }
+
+  .background-image {
+    width: 100%;
+    height: 180px; /* Increased height */
+    margin: 0 auto;
+    display: block;
+  }
+
+  .header {
+    position: absolute;
+    top: 15px; /* Start from top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    height: 40px; /* Smaller logo */
+    margin-bottom: 8px;
+  }
+
+  .social-icons {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 5px 0 10px 0;
+  }
+
+  .social-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .btncap {
+    position: absolute;
+    top: 90px; /* Below header elements */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .transparent-button2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  .registration-section {
+    position: absolute;
+    top: 130px; /* Below button */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    z-index: 10;
+  }
+
+  .registration-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+
+  .services {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .registration-options {
+    display: none;
+  }
+
+  .middle-area {
+    height: 30px; /* More space */
+    width: 100%;
+    margin: 15px auto;
+  }
+
+  /* Rest of the mobile styles remain the same */
   .form-container {
     padding: 15px;
-    max-width: 100%;
-    margin: 0;
+    max-width: 95%;
+    margin: 10px auto;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .glow-button {
     padding: 12px 20px;
     font-size: 14px;
-    max-width: 100%;
-    margin-bottom: 15px;
+    max-width: 90%;
+    margin: 0 auto 15px;
     border-radius: 25px;
+    height: auto;
+  }
+
+  .submit-button {
+    height: 45px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 6px;
+    display: block;
   }
 
   select,
   input {
-    height: 50px;
+    height: 45px;
+    width: 100%;
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border-radius: 6px;
+    box-sizing: border-box;
   }
 
   .form-row {
@@ -493,54 +617,23 @@ input {
     gap: 10px;
   }
 
-  .registration-title {
-    font-size: 16px;
-    margin-bottom: 10px;
+  .form-group {
+    margin-bottom: 15px;
   }
 
-  .services {
-    font-size: 14px;
-    margin-bottom: 30px;
+  label {
+    font-size: 13px;
+    margin-bottom: 6px;
   }
 
-  .background-image {
-    width: 100%;
-    height: 160px;
-  }
-
-  .social-icons {
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 10px;
-  }
-
-  .social-icon {
-    height: 25px;
-    width: 25px;
-  }
-
-  .transparent-button2 {
-    top: 165px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .registration-section {
-    top: 120px;
-  }
-
-  .submit-button {
-    height: 45px;
-    font-size: 16px;
-    border-radius: 6px;
+  .forgot-password {
+    font-size: 13px;
   }
 
   .loading-spinner {
     padding: 20px;
     margin: 10px;
+    max-width: 90%;
   }
 
   .message-container {
@@ -555,20 +648,16 @@ input {
     font-size: 14px;
   }
 
-  .transparent-button {
-    display: none;
+  .text-center {
+    text-align: center;
   }
 
-  .registration-options {
-    margin-bottom: 30px;
+  * {
+    box-sizing: border-box;
   }
 
-  label {
-    font-size: 13px;
-  }
-
-  .forgot-password {
-    font-size: 13px;
+  .form-container * {
+    max-width: 100%;
   }
 }
 
@@ -784,212 +873,6 @@ input {
 }
 
 /* Mobile responsiveness for dashboard */
-@media (max-width: 420px) {
-  .welcome-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-select,
-input {
-  height: 45px;
-  width: 85%;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-.registration-section {
-width: 50%;
-margin: 0 auto;
-height: 350px;
-}
-.glow-button {
-  max-width: 70%;
-  font-size: 15px;
-  margin: 0 auto;
-}
-.submit-button {
-   font-size: 15px;
-  font-weight: 500;
-  width: 80%;  
-}
-.header {
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    padding: 10px;
-  }
-
-  .logo {
-    position: static;
-    transform: none;
-    height: 60px;
-    margin-bottom: 10px;
-  }
-
-  .social-icons {
-    position: static;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .social-icon {
-    height: 25px;
-    width: 25px;
-  }
-
-  .btncap {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .transparent-button2 {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  .registration-section {
-    position: static;
-    transform: none;
-    padding: 0 10px;
-    margin-top: 20px;
-  }
-
-  .registration-title {
-    font-size: 26px;
-  }
-
-  .services {
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
-
-  .registration-options {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
-.middle-area {
-    height: 20px;
-    width: 90%;
-  }
-
-  .background-image {
-    width: 100%;
-    height: 180px;
-  }
-
-  .social-icons {
-    top: 140px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 10px;
-    transition: transform 0.3s ease;
-  }
-
-  .social-icon {
-    height: 25px;
-    width: 25px;
-  }
-
-  .social-icons:hover {
-    transform: translateX(-50%) scale(1.2);
-  }
-
-  .btncap {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .registration-section {
-    position: static;
-    transform: none;
-    padding: 0 10px;
-    margin-top: 20px;
-  }
-
-  .registration-title {
-    font-size: 26px;
-  }
-
-  .services {
-    font-size: 16px;
-    margin-bottom: 30px;
-  }
-
-  .registration-options {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
-
-  .transparent-button {
-    width: 100%;
-    max-width: 280px;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .middle-area {
-    height: 20px;
-    width: 90%;
-  }
-  .welcome-card {
-    padding: 20px;
-  }
-
-  .welcome-icon {
-    font-size: 2rem;
-  }
-
-  .welcome-card h2 {
-    font-size: 1.4rem;
-  }
-
-  .welcome-card p {
-    font-size: 1rem;
-  }
-
-  .action-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .action-card {
-    padding: 20px;
-  }
-
-  .action-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .action-icon i {
-    font-size: 1.2rem;
-  }
-
-  .action-card h3 {
-    font-size: 1.1rem;
-  }
-
-  .student-info {
-    padding: 20px;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .info-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-}
-
 @media (max-width: 768px) and (min-width: 421px) {
   .action-grid {
     grid-template-columns: repeat(2, 1fr);
