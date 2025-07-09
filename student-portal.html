@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="student-style.css">
+    <title>Student Portal - SMIT</title>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="Background" class="background-image">
+
+        <div class="header">
+            <img src="logo-saylani.png" alt="Saylani Logo" class="logo">
+            <div class="social-icons">
+                <img src="facebook-logo.png" alt="Facebook" class="social-icon">
+                <img src="youtube-logo.png" alt="YouTube" class="social-icon">
+                <img src="instagram-logo.png" alt="Instagram" class="social-icon">
+            </div>
+        </div>
+
+        <div class="portal-section">
+            <h1 class="portal-title">Student Portal - SMIT</h1>
+            <p class="services">View Your Registration Details</p>
+        </div>
+            <div class="portal-options">                
+                <button class="transparent-button" onclick="window.location.href='index.html'">Sign in</button>
+                <button class="transparent-button" onclick="window.location.href='rgstr_std.html'">New Registration</button>
+                <button class="transparent-button">Download ID Card</button>
+            </div>
+    </div>
+
+    <div class="middle-area"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Retrieving your information...</p>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-container" class="message-container" style="display: none;">
+        <div id="message-content" class="message-content">
+            <span id="message-text"></span>
+            <button id="close-message" class="close-btn">&times;</button>
+        </div>
+    </div>
+
+<!-- Login Form -->
+    <div id="loginn-sectio" class="login-section">
+        <div class="login-container">
+            <h2 class="login-title">
+                <i class="fas fa-user-graduate"></i>
+                Access Your Registration Details
+            </h2>
+            <p class="login-subtitle">Enter your email and CNIC to view your registration information</p>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        Email Address *
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your registered email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cnic">
+                        <i class="fas fa-id-card"></i>
+                        CNIC Number *
+                    </label>
+                    <input type="text" id="cnic" name="cnic" placeholder="Enter your CNIC (e.g., 12345-1234567-1)" required>
+                </div>
+                
+                <button type="submit" class="login-button">
+                    <span id="login-text">
+                        <i class="fas fa-sign-in-alt"></i>
+                        View My Details
+                    </span>
+                    <span id="login-spinner" class="button-spinner" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Student Details Display -->
+    <div id="student-details" class="student-details" style="display: none;">
+        <div class="details-container">
+            <div class="details-header">
+                <h2>
+                    <i class="fas fa-user-circle"></i>
+                    Registration Details
+                </h2>
+                <div class="status-badge" id="status-badge">
+                    <i class="fas fa-clock"></i>
+                    <span id="status-text">Pending</span>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3><i class="fas fa-user"></i> Personal Information</h3>
+                    <div class="detail-row">
+                        <span class="label">Full Name:</span>
+                        <span class="value" id="student-name">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Father's Name:</span>
+                        <span class="value" id="father-name">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Date of Birth:</span>
+                        <span class="value" id="dob">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Gender:</span>
+                        <span class="value" id="gender">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">CNIC:</span>
+                        <span class="value" id="student-cnic">-</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+                    <div class="detail-row">
+                        <span class="label">Email:</span>
+                        <span class="value" id="student-email">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Phone:</span>
+                        <span class="value" id="phone">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Address:</span>
+                        <span class="value" id="address">-</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Course Information</h3>
+                    <div class="detail-row">
+                        <span class="label">Country:</span>
+                        <span class="value" id="country">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">City:</span>
+                        <span class="value" id="city">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Course:</span>
+                        <span class="value" id="course">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Computer Proficiency:</span>
+                        <span class="value" id="proficiency">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Last Qualification:</span>
+                        <span class="value" id="qualification">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Have Laptop:</span>
+                        <span class="value" id="laptop">-</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fas fa-info-circle"></i> Registration Info</h3>
+                    <div class="detail-row">
+                        <span class="label">Registration Date:</span>
+                        <span class="value" id="created-at">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Application Status:</span>
+                        <span class="value" id="application-status">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Student ID:</span>
+                        <span class="value" id="student-id">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn primary" onclick="window.print()">
+                    <i class="fas fa-print"></i>
+                    Print Details
+                </button>
+                <button class="action-btn secondary" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="student-script.js" type="module"></script>
+</body>
+</html>
