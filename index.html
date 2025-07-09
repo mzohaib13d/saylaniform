@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="improved-style.css">
+    <title>Student Portal - Sign In Zohaib Farooq</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="Background" class="background-image">
+
+        <div class="header">
+            <img src="logo-saylani.png" alt="Saylani Logo" class="logo">
+            <div class="social-icons">
+                <img src="facebook-logo.png" alt="Facebook" class="social-icon">
+                <img src="youtube-logo.png" alt="YouTube" class="social-icon">
+                <img src="instagram-logo.png" alt="Instagram" class="social-icon">
+            </div>
+        </div>
+
+        <div class="btncap">
+            <button class="transparent-button2">
+                <i class="fa-sharp fa-solid fa-user-graduate"></i>&nbsp; Student Portal
+            </button>
+        </div>
+
+        <div class="registration-section">
+            <h1 class="registration-title">Student Portal - SMIT</h1>
+            <p class="services">Services - Education - Sign In</p>
+            <div class="registration-options">
+                <button class="transparent-button active">Sign In</button>
+                <button class="transparent-button">Download ID Card</button>
+                <button class="transparent-button">Results</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-area"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Signing you in...</p>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-container" class="message-container" style="display: none;">
+        <div id="message-content" class="message-content">
+            <span id="message-text"></span>
+            <button id="close-message" class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <form id="signin-form" method="POST" autocomplete="off">
+        <div class="form-container">
+            <!-- New Registration Button -->
+            <div class="form-group">
+                <button type="button" id="new-registration-btn" class="glow-button registration-btn">
+                    <i class="fas fa-user-plus"></i>
+                    New Registration
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cnic">CNIC *</label>
+                <input type="text" id="cnic" name="cnic" placeholder="Enter your CNIC (e.g., 12345-1234567-1)" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submit-btn" class="submit-button">
+                    <span id="submit-text">SIGN IN</span>
+                    <span id="submit-spinner" class="button-spinner" style="display: none;"></span>
+                </button>
+            </div>
+
+            <div class="form-group text-center">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+        </div>
+    </form>
+
+    <script src="signin-script.js" type="module"></script>
+</body>
+</html>
 
